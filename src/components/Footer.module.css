@@ -1,0 +1,11 @@
+.link-buttons{
+    margin: 0 4px;
+}
+
+.footer-container{
+    justify-content: center;
+    display: flex;
+    color:cadetblue;
+    border-top: 2px solid crimson;
+    padding: 10px;
+}
