@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom';
 function Footer(){
     return(
         <div className={css['footer-container']}>
-            <Link to='/' className={css['link-buttons']}>Home</Link>
-            <Link to='/about' className={css['link-buttons']}>About</Link>
-            <Link to='/login' className={css['link-buttons']}>Login</Link>
+            <Link to='/' className={css['text-customization']}>Home</Link>
+            <Link to='/about' className={css['text-customization']}>About</Link>
+            <Link to='/login' className={css['text-customization']}>Login</Link>
         </div>
     );
 }

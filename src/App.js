@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
-
+import Category from './pages/Category';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         <Route exact path='/about' element = {<About/>}/>
         <Route exact path='/login' element = {<Login/>}/>
         <Route path='*' element = {<NotFound/>}/>
+        <Route exact path='/category/:categoryClass' element = {<Category/>}/>
       </Routes>
     </>
   );

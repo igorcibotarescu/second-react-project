@@ -1,16 +1,13 @@
-.nav-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px;
-    border-bottom: 2px solid darkkhaki;
-    color: khaki;
+.logo{
+    width: 60px;
+    height: auto;
 }
 
-.display-in-line-block{
-    display: inline-block;
+.actions-wrapper{
+    width: 150px;
 }
 
-.link-buttons{
-    margin: 0 4px;
+.text-customization{
+    color: #141619;
+    text-decoration: none;
 }
