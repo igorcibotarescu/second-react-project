@@ -1,9 +1,9 @@
-import css from "./SingleProduct.module.css";
+import css from "./SelectedProduct.module.css";
 
-function SingleProduct({item}){
+function SelectedProduct({item}){
     return(
         <div className="container mb-5">
-			<h1 className="my-5 h2">{item.name}</h1>
+			<h1 className="my-5 h2 p-3 mb-2 bg-dark text-white" style={{"width":"600px"}}>{item.name}</h1>
 			<div className="product-info d-flex">
 				<div>
 					<img  className={css["image-wrapper"]} src={item.image} alt="" />
@@ -37,4 +37,4 @@ function SingleProduct({item}){
 		</div>
     )
 }
-export default SingleProduct;
+export default SelectedProduct;

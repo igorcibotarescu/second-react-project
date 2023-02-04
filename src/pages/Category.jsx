@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import Products from "../utils/products.json"
-import ProductItemCategory from "../components/ProductItemCategory";
+import ProductOfCategory from "../components/ProductOfCategory";
 import React from "react";
 import { useParams } from 'react-router-dom';
 
@@ -13,11 +13,11 @@ function Category(){
 
     if(keys.includes(categoryClass)){
         return <Layout>
-            <h3>{"Category: " + categoryClass}</h3>
+            <h3 className="text-center p-3 mb-2 bg-dark text-white">{categoryClass.toUpperCase()}</h3>
             <br/>
             <div className="container">
                 <div className="row">
-                    {data.items.map((item) => <ProductItemCategory key={item.id} product={item} category={categoryClass}/>)}
+                    {data.items.map((item) => <ProductOfCategory key={item.id} product={item} category={categoryClass}/>)}
                 </div>
             </div>
         </Layout>

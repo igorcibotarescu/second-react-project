@@ -1,11 +1,10 @@
-import css from "../pages/Category.module.css";
 import image from "../assets/icons/shopping-cart.svg";
 import { Link } from "react-router-dom";
 
-function ProductItemCategory({product,category}){
+function ProductOfCategory({product,category}){
     return(
         <div className="col-4 mb-4"> 
-            <img className={css['category'] + " w-100 object-fit-cover border rounded"} src={product.image} alt="Product"></img>
+            <img className=" w-100 object-fit-cover border rounded" style={{"height":"350px"}} src={product.image} alt="Product"></img>
             <div className="text-center">
                 <h4>{product.name}</h4>
                 <h6>{"Brand: " + product.brand}</h6>
@@ -19,4 +18,4 @@ function ProductItemCategory({product,category}){
     )
 }
 
-export default ProductItemCategory;
+export default ProductOfCategory;
