@@ -1,4 +1,10 @@
-.single-product-style{
-    height: 350px;
-    width: 250px;
+.image-wrapper {
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    height: 100%;
+}
+
+.text-wrap{
+    inline-size: 350px;
 }
