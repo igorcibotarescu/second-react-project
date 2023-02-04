@@ -1,19 +1,14 @@
 import Layout from "../components/Layout";
 import Products from "../utils/products.json";
+import { useParams } from 'react-router-dom';
+import SingleProduct from "../components/SingleProduct";
 
 function Product(){
-    const pathElements = window.location.pathname.split('/');
-    const productId = parseInt(pathElements[pathElements.length - 1]);
-    const category = pathElements[pathElements.length - 2];
-    console.log(typeof(productId));
-    console.log(typeof(category));
-    console.log(category,productId);
+    const {category,productId} = useParams();
     const data = Products[category].items;
-    console.log(data);
-    const item = data.find(item => item.id = productId);
-    console.log(item);
+    const item = data.find(item => item.id === +productId);
     return <Layout>
-
+        <SingleProduct item={item}/>
     </Layout>
 }
 

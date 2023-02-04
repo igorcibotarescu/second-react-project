@@ -1,20 +1,23 @@
 import Layout from "../components/Layout";
 import Products from "../utils/products.json"
 import ProductItemCategory from "../components/ProductItemCategory";
+import React from "react";
+import { useParams } from 'react-router-dom';
+
+
 
 function Category(){
-    const pathElements = window.location.pathname.split('/');
-    const category = pathElements[pathElements.length - 1];
+    const {categoryClass} = useParams();
     const keys = Object.keys(Products);
+    const data = Products[categoryClass];
 
-    if(keys.includes(category)){
-        const data = Products[category];
+    if(keys.includes(categoryClass)){
         return <Layout>
-            <h3>{"Category: " + category}</h3>
+            <h3>{"Category: " + categoryClass}</h3>
             <br/>
             <div className="container">
                 <div className="row">
-                    {data.items.map((item) => <ProductItemCategory key={item.id} product={item} category={category}/>)}
+                    {data.items.map((item) => <ProductItemCategory key={item.id} product={item} category={categoryClass}/>)}
                 </div>
             </div>
         </Layout>

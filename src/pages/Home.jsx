@@ -16,7 +16,7 @@ function Home(){
                          key={category.id}
                          categoryClass={categoryClasses[index]}
                     />
-                ))}
+                ))} 
             </div>
         </div>
     </Layout>
