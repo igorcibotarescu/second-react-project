@@ -6,6 +6,7 @@ import NotFound from './pages/NotFound';
 import Category from './pages/Category';
 import { Component } from 'react';
 import Product from './pages/Product';
+import Cart from './pages/Cart';
 class App extends Component {
   render(){
     return (
@@ -17,6 +18,7 @@ class App extends Component {
           <Route path='*' element = {<NotFound/>}/>
           <Route exact path='/category/:categoryClass' element = {<Category/>}/>
           <Route exact path='/products/:category/:productId' element= {<Product/>}></Route>
+          <Route path='/cart' element = {<Cart/>}/>
         </Routes>
       </>
     );
