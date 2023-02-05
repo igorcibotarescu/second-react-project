@@ -1,6 +1,8 @@
 import css from "./SelectedProduct.module.css";
+import { connect } from "react-redux";
+import {addToCart} from "../redux/actions/product.actions"
 
-function SelectedProduct({item}){
+function SelectedProduct({item,addItemToCart}){
     return(
         <div className="container mb-5">
 			<h1 className="my-5 h2 p-3 mb-2 bg-dark text-white" style={{"width":"600px"}}>{item.name}</h1>
@@ -31,10 +33,17 @@ function SelectedProduct({item}){
 						</p>
 						<p className={css["text-wrap"]}>{item.description}</p>
 					</div>
-					<button>Adauga in cos</button>
+					<button onClick={() => addItemToCart(item)} className="btn btn-outline-dark">Add to Cart</button>
 				</div>
 			</div>
 		</div>
     )
 }
-export default SelectedProduct;
+
+function dispatchToProps(dispatch){
+	return{
+		addItemToCart: (product) => dispatch(addToCart(product))
+	};
+}
+
+export default connect(null,dispatchToProps)(SelectedProduct);

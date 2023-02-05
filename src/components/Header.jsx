@@ -4,6 +4,7 @@ import css from './Header.module.css';
 import {app} from '../firebase-init';
 import { getAuth, GoogleAuthProvider, signOut, onAuthStateChanged,signInWithPopup } from 'firebase/auth';
 import { Component } from 'react';
+import Cart from './Cart';
 
 class Header extends Component{
     auth = getAuth(app);
@@ -54,6 +55,7 @@ class Header extends Component{
                         <button onClick={() => this.signIn()}>Sign In Firebase</button>
                     }
                     {this.state.loading && <h4>Loading...</h4>}
+                    <Cart/>
                 </div>
             </div>
         )
