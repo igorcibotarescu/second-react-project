@@ -7,7 +7,14 @@ import Category from './pages/Category';
 import { Component } from 'react';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
+import { userLoaded } from './redux/actions/user.actions';
+import { connect } from 'react-redux';
 class App extends Component {
+
+  componentDidMount(){
+    this.props.initData();
+  }
+
   render(){
     return (
       <>
@@ -25,4 +32,10 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapDispatchToProps(dispatch){
+  return{
+    initData: () => dispatch(userLoaded())
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App);
