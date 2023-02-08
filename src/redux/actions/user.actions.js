@@ -1,5 +1,6 @@
 import { getAuth, GoogleAuthProvider, signOut,signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import {app} from '../../firebase-init';
+import { resetCart } from './product.actions';
 
 const auth = getAuth(app);
 
@@ -32,7 +33,8 @@ export function userLoaded(){
 export function logOut(){
     return(dispatch) => {
         signOut(auth).then(() => {
-            dispatch(logOutSuccessful())
+            dispatch(logOutSuccessful());
+            dispatch(resetCart());
         }).catch(error => {
             dispatch(actionError(error));
         })

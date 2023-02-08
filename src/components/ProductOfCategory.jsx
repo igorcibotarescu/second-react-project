@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 function ProductOfCategory({product,category}){
     return(
-        <div className="col-4 mb-4"> 
+        <div className="col-6 col-lg-3 mb-4"> 
             <img className=" w-100 object-fit-cover border rounded" style={{"height":"350px"}} src={product.image} alt="Product"></img>
             <div className="text-center">
-                <h4>{product.name}</h4>
+                <h6 style={{color:"#73A0A0"}}>{product.name}</h6>
                 <h6>{"Brand: " + product.brand}</h6>
                 <h6>{"Mărimea: " + product.size}</h6>
                 <h6>{"Preț: " + product.price + product.currency}</h6>

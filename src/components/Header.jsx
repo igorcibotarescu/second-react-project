@@ -12,19 +12,21 @@ function Header({user,signIn,signOut}){
                 <Link to='/'>
                     <img className={css.logo} src={LogoShop} alt='Shopping Logo'/>
                 </Link>
-                {user && <h6>{user.displayName}</h6>}
+                {user && <h4 className='text-muted'>{(user.displayName).toUpperCase()}</h4>}
                 <div className={css['actions-wrapper'] + ' d-flex justify-content-between'}>
                     <Link to='/' className={css['text-customization']}>Home</Link>
                     <Link to='/about' className={css['text-customization']}>About</Link>
-                    <Link to='/login' className={css['text-customization']}>Login</Link>
+                    {/*<Link to='/login' className={css['text-customization']}>Login</Link>*/}
                 </div>
+                {/*this.state.loading && <h4>Loading...</h4>*/}
+                <div className='float-right'>
                 {
                     user ? 
-                    <button onClick={() => signOut()}>Sign Out Firebase</button>
+                    <button className='btn btn-outline-dark' onClick={() => signOut()}>Sign Out</button>
                     :
-                    <button onClick={() => signIn()}>Sign In Firebase</button>
+                    <button className='btn btn-outline-dark' onClick={() => signIn()}>Sign In</button>
                 }
-                {/*this.state.loading && <h4>Loading...</h4>*/}
+            </div>
                 <CartIcon/>
             </div>
         </div>

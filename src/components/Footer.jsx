@@ -6,7 +6,7 @@ function Footer(){
         <div className={css['footer-container']}>
             <Link to='/' className={css['text-customization']}>Home</Link>
             <Link to='/about' className={css['text-customization']}>About</Link>
-            <Link to='/login' className={css['text-customization']}>Login</Link>
+            {/*<Link to='/login' className={css['text-customization']}>Login</Link>*/}
         </div>
     );
 }

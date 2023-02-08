@@ -25,6 +25,39 @@ function reducer(state = initialState,action){
                 cartProducts:[...state.cartProducts,firstTimeProduct]
             }
         }
+        case ProductActions.RESET_CART:
+            return{
+                ...state,
+                cartProducts: []
+            }
+        case ProductActions.DELETE_SINGLE_ITEM:
+            const previousItem = state.cartProducts.find((p) => p.product.id === action.payload.id);
+            const remainingItems = state.cartProducts.filter((p) => p.product.id !== action.payload.id);
+            if(previousItem){
+                let newItems = undefined;
+                if(previousItem.quantity >= 1){
+                    newItems =  {...previousItem,quantity: previousItem.quantity - 1};
+                }else{
+                    newItems =  {...previousItem,quantity: 0};
+                }
+                return{
+                    ...state,
+                    cartProducts: [...remainingItems,newItems]
+                }
+            }else{
+                return{
+                    ...state,
+                    cartProducts: [...state.cartProducts]
+                }
+            }
+        case ProductActions.DELETE_ALL_ITEMS:
+            const itemToSearch = state.cartProducts.find((p) => p.product.id === action.payload.id);
+            const itemsToInclude = state.cartProducts.filter((p) => p.product.id !== action.payload.id);
+            const newItemToInclude = {...itemToSearch,quantity:0};
+            return {
+                ...state,
+                cartProducts: [...itemsToInclude,newItemToInclude]
+            }
         default:
             return state;
     }
