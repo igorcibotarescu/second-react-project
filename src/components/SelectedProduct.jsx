@@ -1,6 +1,7 @@
 import css from "./SelectedProduct.module.css";
 import { connect } from "react-redux";
 import {addToCart,deleteSingleItem,deleteAllItems} from "../redux/actions/product.actions"
+import AddToCart from "../assets/buttons/AddToCart";
 
 function SelectedProduct({item,addItemToCart,allItems,deleteItem,deleteItems}){
 	const currentItem = allItems.find(element => element.product.id === item.id);
@@ -34,13 +35,15 @@ function SelectedProduct({item,addItemToCart,allItems,deleteItem,deleteItems}){
 						</p>
 						<p className={css["text-wrap"]}>{item.description}</p>
 					</div>
-					<button onClick={() => addItemToCart(item)} className="btn btn-outline-dark">Add to Cart</button>
+					<button onClick={() => addItemToCart(item)} className="btn btn-outline-dark">Add To Cart</button>
 					{currentItem ? <p style={{color:"red"}}>{"You're currently having " + currentItem.quantity + " item(s)"}</p> :
 					<p style={{color:"red"}}>{"You haven't purchased any item yet"}</p>}
 					<button onClick={() => deleteItem(item)} className="btn btn-outline-dark">Delete Item</button>
 					<br></br>
 					<br></br>
 					<button onClick={()=> deleteItems(item)} className="btn btn-outline-dark">Delete All Items</button>
+					<br></br>
+					<AddToCart addItemToCart={()=>addItemToCart(item)}></AddToCart>
 					</div>
 			</div>
 		</div>

@@ -1,7 +1,8 @@
 import {ProductActions} from "../actions/product.actions"
 
 const initialState = {
-    cartProducts: []
+    cartProducts: [],
+    loading: false
 }
 
 function reducer(state = initialState,action){
@@ -13,7 +14,8 @@ function reducer(state = initialState,action){
                 const updateInsertedProduct =  {...existingProduct,quantity: existingProduct.quantity + 1};
             return{
                 ...state,
-                cartProducts: [...remainingProducts, updateInsertedProduct]
+                cartProducts: [...remainingProducts, updateInsertedProduct],
+                loading : false
             };
         }else{
             const firstTimeProduct = {
