@@ -1,6 +1,6 @@
 {
     "shoes": {
-        "id":0,
+        "id": 0,
         "items": [
             {
                 "id": 1,
@@ -44,7 +44,7 @@
         "description": "Ghete, pantofi, sneakerși: finețe garantată!"
     },
     "sweaters": {
-        "id":1,
+        "id": 1,
         "items": [
             {
                 "id": 4,
@@ -100,7 +100,7 @@
         "description": "Pulovărașe elegănțele, slim, clasă superioară."
     },
     "pants": {
-        "id":2,
+        "id": 2,
         "items": [
             {
                 "id": 8,
@@ -132,7 +132,7 @@
         "description": "Jeanși și pantaloni pentru baieții care și-o ard patroni!"
     },
     "jackets": {
-        "id":3,
+        "id": 3,
         "items": [
             {
                 "id": 10,
@@ -164,7 +164,7 @@
         "description": "Confortabile, călduroase și nu arăți ca un cartof!"
     },
     "tshirts": {
-        "id":4,
+        "id": 4,
         "items": [
             {
                 "id": 12,
@@ -208,7 +208,7 @@
         "description": "Și de băiețeală și de sport."
     },
     "accesories": {
-        "id":5,
+        "id": 5,
         "items": [
             {
                 "id": 15,

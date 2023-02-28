@@ -1,7 +1,6 @@
 import css from "./SelectedProduct.module.css";
 import { connect } from "react-redux";
 import {addToCart,deleteSingleItem,deleteAllItems} from "../redux/actions/product.actions"
-import AddToCart from "../assets/buttons/AddToCart";
 
 function SelectedProduct({item,addItemToCart,allItems,deleteItem,deleteItems}){
 	const currentItem = allItems.find(element => element.product.id === item.id);
@@ -43,7 +42,6 @@ function SelectedProduct({item,addItemToCart,allItems,deleteItem,deleteItems}){
 					<br></br>
 					<button onClick={()=> deleteItems(item)} className="btn btn-outline-dark">Delete All Items</button>
 					<br></br>
-					<AddToCart addItemToCart={()=>addItemToCart(item)}></AddToCart>
 					</div>
 			</div>
 		</div>
